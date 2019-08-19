@@ -1,151 +1,81 @@
 
-## Angular Ngrx Course
+# Angular Ngrx Course
 
-This repository contains the code of the [Angular Ngrx Course](https://angular-university.io/course/angular-ngrx-course).
+This repository contains the code of the [Angular Ngrx Course](https://github.com/imvr-24/angular-ngrx-course.git).
 
 This course repository is updated to Angular v8, and there is a  package-lock.json file available, for avoiding semantic versioning installation issues.
 
-![Angular Ngrx Course](https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png)
 
+# Ngrx Handbook
 
-# Installation pre-requisites
+```js
+@ngrx/
+1. store
+2. effects
+3. entity
+4. store-devtools
+5. schematics
+6. store freeze
+7. router-store
 
-IMPORTANT: Please use NPM 5 or above, to make sure the package-lock.json is used.
+```
 
-For running this project we need and npm installed on our machine. These are some tutorials to install node in different operating systems:
+## What Concrete problem does it solve
 
-*Its important to install the latest version of Node*
+```bash
 
-- [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
-- [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
-- [Install Node and NPM on Mac](https://www.youtube.com/watch?v=Imj8PgG3bZU)
+1. Reduce the no of http requests that we do
+2. Improve hte user exprerience.(reduce no of loaders)
+3. Edit Data Scenarios.(Saving as draft)
+4. Reflecting chnges in the UI.(UI must be in sync with Latest Data).
+5.
 
+```
 
-# Installing the Angular CLI
+## Store Architecture
 
-With the following command the angular-cli will be installed globally in your machine:
+```bash
 
-    npm install -g @angular/cli 
+Store - Single store of Truth.
 
+Store works as an in-memory database.
 
-# How To install this repository
+1. Actions(| Event): CourseChanged
 
-We can install the master branch using the following commands:
+2. Command: IncrementCounter.
 
-    git clone https://github.com/angular-university/angular-ngrx-course.git
-    
-This repository is made of several separate npm modules, that are installable separately. For example, to run the au-input module, we can do the following:
-    
-    cd angular-ngrx-course
-    npm install
+** Key Notions.
 
-Its also possible to install the modules as usual using npm:
+1. Data is immutable and belongs to store.
+2. Components subscribe to store.
 
-    npm install 
+```
 
-NPM 5 or above has the big advantage that if you use it you will be installing the exact same dependencies than I installed in my machine, so you wont run into issues caused by semantic versioning updates.
+## Setting up ngrx store with NgRx Schematics
 
-This should take a couple of minutes. If there are issues, please post the complete error message in the Questions section of the course.
+```bash
 
-# To Run the Development Backend Server
+`Ngrx Schematics`.
 
-We can start the sample application backend with the following command:
+1. ng config cli.defaultCollection @ngrx/schematics
 
-    npm run server
+2. ng g store AppState --root --module app.module.ts
 
-This is a small Node REST API server.
+Exploring Centralized Store Service.
 
-# To run the Development UI Server
+# Defining our first NgRx Action
+3. ng generate action auth/Auth
 
-To run the frontend part of our code, we will use the Angular CLI:
+# Defining an Action - Implement the login Component "1-auth"
 
-    npm start 
+4. Setting Up the NgRx Dev tools.
 
-The application is visible at port 4200: [http://localhost:4200](http://localhost:4200)
+# reducer(current state, action) => new App State.
+5. Understanding &  Writing Reducers.
+6. Define the Store Initial State.
 
+7. Speed up Reducer Development using NgRx Schematics
 
+`ng generate reducer Auth --flat=false --module auth/auth.module.ts`
 
-# Important 
-
-This repository has multiple branches, have a look at the beginning of each section to see the name of the branch.
-
-At certain points along the course, you will be asked to checkout other remote branches other than master. You can view all branches that you have available remotely using the following command:
-
-    git branch -a
-
-  The remote branches have their starting in origin, such as for example 1-navigation-and-containers.
-
-We can checkout the remote branch and start tracking it with a local branch that has the same name, by using the following command:
-
-      git checkout -b 1-auth origin/1-auth
-
-It's also possible to download a ZIP file for a given branch,  using the branch dropdown on this page on the top left, and then selecting the Clone or Download / Download as ZIP button.
-
-# Other Courses
-
-# Angular PWA Course
-
-If you are looking for the [Angular PWA Course](https://angular-university.io/course/angular-pwa-course), the repo with the full code can be found here:
-
-![Angular PWA Course - Build the future of the Web Today](https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png)
-
-# Angular Security Masterclass
-
-If you are looking for the [Angular Security Masterclass](https://angular-university.io/course/angular-security-course), the repo with the full code can be found here:
-
-[Angular Security Masterclass](https://github.com/angular-university/angular-security-course).
-
-![Angular Security Masterclass](https://s3-us-west-1.amazonaws.com/angular-university/course-images/security-cover-small-v2.png)
-
-# Angular Advanced Library Laboratory Course
-
-If you are looking for the Angular Advanced Course, the repo with the full code can be found here:
-
-[Angular Advanced Library Laboratory Course: Build Your Own Library](https://angular-university.io/course/angular-advanced-course).
-
-![Angular Advanced Library Laboratory Course: Build Your Own Library](https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png)
-
-
-## RxJs and Reactive Patterns Angular Architecture Course
-
-If you are looking for the RxJs and Reactive Patterns Angular Architecture Course code, the repo with the full code can be found here:
-
-[RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course)
-
-![RxJs and Reactive Patterns Angular Architecture Course](https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png)
-
-
-
-## Angular Ngrx Reactive Extensions Architecture Course
-
-If you are looking for the Angular Ngrx Reactive Extensions Architecture Course code, the repo with the full code can be found here:
-
-[Angular Ngrx Reactive Extensions Architecture Course](https://angular-university.io/course/angular2-ngrx)
-
-[Github repo for this course](https://github.com/angular-university/ngrx-course)
-
-![Angular Ngrx Course](https://angular-academy.s3.amazonaws.com/thumbnails/ngrx-angular.png)
-
-
-
-## Angular 2 and Firebase - Build a Web Application Course
-
-If you are looking for the Angular 2 and Firebase - Build a Web Application Course code, the repo with the full code can be found here:
-
-[Angular 2 and Firebase - Build a Web Application](https://angular-university.io/course/build-an-application-with-angular2)
-
-[Github repo for this course](https://github.com/angular-university/angular-firebase-app)
-
-![Angular firebase course](https://angular-academy.s3.amazonaws.com/thumbnails/angular_app-firebase-small.jpg)
-
-
-## Complete Typescript 2 Course - Build A REST API
-
-If you are looking for the Complete Typescript 2 Course - Build a REST API, the repo with the full code can be found here:
-
-[https://angular-university.io/course/typescript-2-tutorial](https://github.com/angular-university/complete-typescript-course)
-
-[Github repo for this course](https://github.com/angular-university/complete-typescript-course)
-
-![Complete Typescript Course](https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png)
-
+```

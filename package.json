@@ -4,10 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve  --proxy-config ./proxy.json",
+    "start": "ng serve  --proxy-config ./proxy.json --port=2222",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build",   
+    "test": "ng test", 
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
